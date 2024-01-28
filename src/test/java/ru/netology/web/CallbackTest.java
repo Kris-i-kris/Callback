@@ -43,9 +43,8 @@ public class CallbackTest {
 
     @Test
     void test() {
-        List<WebElement> elements = driver.findElements(By.className("input__control"));
-        elements.get(0).sendKeys("Анна Петрова");
-        elements.get(1).sendKeys("+79123456789");
+        driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Анна Иванова-Петрова");
+        driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.className("button")).click();
         String text = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText();
